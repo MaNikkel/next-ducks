@@ -1,15 +1,12 @@
 // Styled-JSX
+import RandomNumber from "../components/RandomNumber";
+import GenerateNumber from "../components/GenerateNumber"
+
 export default function Home() {
   return (
     <div>
-        <h1 className="title">Hello World</h1>
-        <style jsx>
-            {`
-                .title{
-                    color: red;
-                }
-            `}
-        </style>
+        <RandomNumber />
+        <GenerateNumber />
     </div>
   )
 }
