@@ -1,14 +1,14 @@
-import { createStore, applyMiddleware, compose, combineReducers } from "redux";
-import { DefaultRootState } from "react-redux";
+import { createStore, combineReducers } from "redux";
 import numberReducer, { INumberState } from "./ducks/number";
+
+export type IRootState = {
+    number: INumberState;
+  }
 
 const rootReducer = combineReducers({
     number: numberReducer
 });
 
-export interface RootState extends DefaultRootState{
-    number: INumberState
-}
 
 const store = createStore(rootReducer);
 
