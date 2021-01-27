@@ -1,17 +1,17 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { generateNumber, resetNumber, multiplyNumber } from "../../store/ducks/number";
+import { generateNumberRequest, resetNumber, multiplyNumberRequest } from "../../store/ducks/number";
 
 const RandomNumber: React.FC = () => {
     const dispatch = useDispatch();
     const handleClickGenerate = () => {
-        dispatch(generateNumber(Math.random()*10));
+        dispatch(generateNumberRequest(Math.random()*10));
     }
     const handleClickReset = () => {
         dispatch(resetNumber());
     }
     const handleClickMultiply = () => {
-        dispatch(multiplyNumber());
+        dispatch(multiplyNumberRequest(2));
     }
 
     return (

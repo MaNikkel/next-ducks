@@ -1,11 +1,26 @@
-import { NumberActionTypes, GENERATE, RESET, MULTIPLY } from './types'
+import { NumberActionTypes, RESET, GENERATE_REQUEST, GENERATE_SUCCESS, GENERATE_FAILURE, MULTIPLY_REQUEST, MULTIPLY_SUCCESS, MULTIPLY_FAILURE } from './types'
 
-export function generateNumber(newNumber: number): NumberActionTypes {
+export function generateNumberRequest(newNumber: number): NumberActionTypes {
   return {
-      type: GENERATE,
+      type: GENERATE_REQUEST,
       payload: { number: newNumber }
   }
 }
+
+export function generateNumberSuccess(newNumber: number): NumberActionTypes {
+  return {
+      type: GENERATE_SUCCESS,
+      payload: { number: newNumber }
+  }
+}
+
+export function generateNumberFailure(): NumberActionTypes {
+  return {
+      type: GENERATE_FAILURE,
+      payload: { }
+  }
+}
+
 
 export function resetNumber(): NumberActionTypes {
   return {
@@ -14,9 +29,23 @@ export function resetNumber(): NumberActionTypes {
   }
 }
 
-export function multiplyNumber(): NumberActionTypes {
+export function multiplyNumberRequest(multiplyNumber: number): NumberActionTypes {
   return {
-      type: MULTIPLY,
-      payload: { multiply: 2 }
+      type: MULTIPLY_REQUEST,
+      payload: { multiply: multiplyNumber }
+  }
+}
+
+export function multiplyNumberSuccess(multiplyNumber: number): NumberActionTypes {
+  return {
+      type: MULTIPLY_SUCCESS,
+      payload: { multiply: multiplyNumber }
+  }
+}
+
+export function multiplyNumberFailure(): NumberActionTypes {
+  return {
+      type: MULTIPLY_FAILURE,
+      payload: { }
   }
 }
