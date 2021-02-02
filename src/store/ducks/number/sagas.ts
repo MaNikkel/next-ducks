@@ -7,9 +7,9 @@ import { INumberState } from './reducer';
 import { GENERATE_REQUEST, IGenerateRandomNumberActionRequest, IMultiplyNumberActionRequest, MULTIPLY_REQUEST } from './types';
 
 function* checkNumberLimit(action: IGenerateRandomNumberActionRequest) {
-  const limitResponse: AxiosResponse<{ limit: number }> = yield call(api.get, 'limit');
+  // const limitResponse: AxiosResponse<{ limit: number }> = yield call(api.get, 'limit');
 
-  if (action.payload.number < limitResponse.data.limit) {
+  if (action.payload.number < 2) {
     yield put(generateNumberSuccess(action.payload.number))
   } else {
     yield put(generateNumberFailure())
